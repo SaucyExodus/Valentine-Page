@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine? 💘</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="valentines-page">
+    <div class="container">
+      <h1>Will you be my Valentine? 💖</h1>
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes! 🥰</button>
+        <button class="no" onmouseover="moveButton()">No 😢</button>
+      </div>
+      <p id="message" class="hidden">
+        Yay! You just made my day! ❤️😊 I can't wait spend this Valentine's day
+        with you! 💕 You're my world!
+      </p>
+    </div>
+
+    <script>
+      function moveButton() {
+        const noButton = document.querySelector(".no");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        noButton.style.position = "absolute";
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+      }
+
+      function sayYes() {
+        document.getElementById("message").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
